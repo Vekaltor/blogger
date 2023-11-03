@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './features/home/home.component';
-import { authGuard } from './core/auth/auth-guard.guard';
+import { AuthGuard, IsLoggedGuard } from './core/auth/auth-guard.guard';
 import { Test1Component } from './features/test1/test1.component';
 import { Test2Component } from './features/test2/test2.component';
 
@@ -18,6 +18,7 @@ const routes: Routes = [
   {
     path: 'auth/register',
     component: Test2Component,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

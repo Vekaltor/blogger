@@ -9,6 +9,7 @@ import { HeaderComponent } from './core/layout/header/header.component';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { Test1Component } from './features/test1/test1.component';
 import { Test2Component } from './features/test2/test2.component';
+import { RedirectToLoginDirective } from './shared/redirect-to-login.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { Test2Component } from './features/test2/test2.component';
     HeaderComponent,
     Test1Component,
     Test2Component,
+    RedirectToLoginDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, TabMenuModule],
   providers: [],
