@@ -1,0 +1,32 @@
+::ng-deep .customize-button * {
+  font-weight: 700;
+}
+
+::ng-deep .customize-code {
+  position: relative;
+  color: var(--red-400);
+}
+
+::ng-deep .customize-code::after,
+::ng-deep .customize-code::before {
+  position: absolute;
+  top: 33%;
+  right: 0;
+  content: "";
+  width: 50vw;
+  height: 40px;
+  background: radial-gradient(
+    50% 109137.91% at 50% 50%,
+    rgba(233, 30, 99, 0.1) 0%,
+    rgba(254, 244, 247, 0) 100%
+  );
+}
+
+::ng-deep .customize-code::after {
+  right: none;
+  left: 0;
+}
+
+::ng-deep .customize-span {
+  color: var(--text-color-secondary);
+}

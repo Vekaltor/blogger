@@ -1,0 +1,13 @@
+<div class="absolute top-0 left-0 flex flex-column align-items-center justify-content-center h-screen w-12">
+
+ <span class="text-3xl font-semibold pt-5 pb-5 customize-code text-center">404</span>
+ <span class="text-6xl font-bold pt-3 pb-3 text-center">Page Not Found</span>
+ <span class="text-2xl pt-3 pb-3 customize-span text-center">Przepraszamy, nie możemy obsłużyć tego adresu URL.</span>
+
+ <div class="flex gap-5 pt-4">
+  <p-button icon="pi pi-arrow-left" [text]="true" label="Wróć" class="customize-button"
+   (click)="backToLastPage()"></p-button>
+  <p-button icon="pi pi-home" label="Strona główna" class="customize-button" [routerLink]="'/'"></p-button>
+ </div>
+
+</div>

@@ -10,6 +10,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { Test1Component } from './features/test1/test1.component';
 import { Test2Component } from './features/test2/test2.component';
 import { RedirectToLoginDirective } from './shared/redirect-to-login.directive';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { RedirectToLoginDirective } from './shared/redirect-to-login.directive';
     Test2Component,
     RedirectToLoginDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, TabMenuModule],
+  imports: [BrowserModule, AppRoutingModule, TabMenuModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,3 +1,7 @@
-<div appRedirectToLogin class="flex w-full h-full ">
- Witaj świecie !
+<app-layout-header></app-layout-header>
+<div appRedirectToLogin class="w-full flex justify-content-center">
+ <div class="w-8 p-2 ">
+  <router-outlet></router-outlet>
+ </div>
 </div>
+<app-layout-footer></app-layout-footer>
