@@ -1,0 +1,3 @@
+.category-hover:hover span {
+  color: var(--primary-color);
+}

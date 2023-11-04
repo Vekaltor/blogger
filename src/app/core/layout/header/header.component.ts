@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 interface NavItem {
   name: string;
@@ -12,8 +12,8 @@ interface NavItem {
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  items: Array<NavItem> | undefined;
-  activeItem: NavItem | undefined;
+  public items: Array<NavItem> | undefined;
+  public activeItem: NavItem | undefined;
 
   ngOnInit() {
     this.items = [

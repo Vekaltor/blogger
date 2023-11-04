@@ -11,6 +11,10 @@ import { Test1Component } from './features/test1/test1.component';
 import { Test2Component } from './features/test2/test2.component';
 import { RedirectToLoginDirective } from './shared/redirect-to-login.directive';
 import { SharedModule } from './shared/shared.module';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { CategoriesComponent } from './features/categories/categories.component';
+import { CategoryService } from './core/services/category.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,17 @@ import { SharedModule } from './shared/shared.module';
     Test1Component,
     Test2Component,
     RedirectToLoginDirective,
+    CategoriesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, TabMenuModule, SharedModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TabMenuModule,
+    SharedModule,
+    CardModule,
+    ButtonModule,
+  ],
+  providers: [CategoryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

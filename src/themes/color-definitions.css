@@ -1,0 +1,12 @@
+:root {
+  --secondary: #181818;
+  --secondary-lighter: #313131;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.card-custom-border-bottom {
+  border-bottom: solid 10px var(--secondary-lighter) !important;
+}

@@ -1,4 +1,11 @@
-::ng-deep .p-tabmenu * {
-  background-color: transparent;
-  border-color: transparent;
+::ng-deep .p-tabmenu .p-tabmenu-nav {
+  border: none;
+}
+
+::ng-deep .p-tabmenu ul li:hover span {
+  color: var(--primary-200);
+}
+
+::ng-deep .p-tabmenu:active span {
+  color: var(--primary-200) !important;
 }
