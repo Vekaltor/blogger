@@ -1,0 +1,50 @@
+.frame {
+  position: absolute;
+  border: 2px solid var(--primary-color);
+}
+
+.frame-top-left {
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.frame-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-left: none;
+  border-top: none;
+}
+
+@keyframes frameInitialAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.frame-top-left,
+.frame-bottom-right {
+  animation: frameInitialAnimation 1s ease-in-out;
+}
+
+@media screen and (max-height: 800px) and (orientation: landscape) {
+  form > div {
+    flex-wrap: nowrap !important;
+    gap: 35px;
+    width: 75% !important;
+    height: 100vh;
+    align-items: center;
+  }
+  form > div > div {
+    align-self: flex-end;
+    margin-bottom: 20px !important;
+  }
+}

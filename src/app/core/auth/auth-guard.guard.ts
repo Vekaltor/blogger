@@ -18,10 +18,10 @@ export class AuthGuard {
     state: RouterStateSnapshot
   ): boolean {
     const currentUser: FakeUser = JSON.parse(
-      route.queryParamMap.get('currentUser')!
+      localStorage.getItem('currentUser')!
     );
 
-    if (currentUser) {
+    if (currentUser?.token) {
       return true;
     } else {
       this.router.navigate(['/auth/login']);

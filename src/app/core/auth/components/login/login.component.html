@@ -1,0 +1,46 @@
+<form class="flex h-screen w-screen align-items-center justify-content-center" (ngSubmit)="handleSubmit($event)"
+  #loginForm="ngForm">
+
+  <div
+    class="relative flex flex-wrap justify-content-center surface-card p-4 shadow-8 border-round w-full md:w-6 bg-secondary border-2">
+
+    <div class="absolute right-0 top-0 pi pi-times p-3 cursor-pointer hover:text-primary tranistion-all 400"
+      routerLink=""></div>
+
+    <div class="w-full text-center mb-5">
+      <div class="relative">
+        <div class=" frame frame-top-left"></div>
+        <div class="frame frame-bottom-right"></div>
+        <img src="assets/images/login.png" alt="Image" class="relative max-h-25rem max-w-full p-4 mb-3">
+      </div>
+
+      <div class="text-900 text-3xl font-medium mb-3">Welcome Back!</div>
+      <span class="text-600 font-medium line-height-3">Don't have an account?</span>
+      <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer hover:underline"
+        routerLink="/auth/register">Create today!</a>
+    </div>
+
+    <div class="max-w-30rem flex-grow-1">
+      <label for="email" class="block text-900 font-medium mb-2">Email</label>
+      <input id="email" type="text" placeholder="Email address" pInputText class="h-2rem w-full mb-3"
+        [(ngModel)]="labels.email" name="email">
+
+      <label for="password" class="block text-900 font-medium mb-2">Password</label>
+      <input id="password" type="password" name="password" placeholder="Password" pInputText class="h-2rem w-full mb-3"
+        [(ngModel)]="labels.password">
+
+      <div class="flex align-items-center justify-content-between mb-6">
+        <div class="flex align-items-center">
+          <p-checkbox id="rememberMe" [binary]="true" styleClass="mr-2" [(ngModel)]="labels.rememberMe"
+            name="rememberMe"></p-checkbox>
+          <label for="rememberme1" class="text-900">Remember me</label>
+        </div>
+        <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer hover:underline">Forgot
+          password?</a>
+      </div>
+
+      <button pButton pRipple label="Sign In" icon="pi pi-user"
+        class="w-full hover:bg-primary-600 zoominup animation-duration-500"></button>
+    </div>
+  </div>
+</form>

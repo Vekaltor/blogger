@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface NavItem {
   name: string;
@@ -15,6 +16,8 @@ export class HeaderComponent implements OnInit {
   public items: Array<NavItem> | undefined;
   public activeItem: NavItem | undefined;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.items = [
       {
@@ -23,17 +26,21 @@ export class HeaderComponent implements OnInit {
         iconClass: 'pi pi-home',
       },
       {
+        name: 'Contact',
+        link: 'contact',
+        iconClass: 'pi pi-id-card',
+      },
+      {
         name: 'login',
         link: 'auth/login',
         iconClass: 'pi pi-user',
       },
-      {
-        name: 'register',
-        link: 'auth/register',
-        iconClass: 'pi pi-sign-in',
-      },
     ];
 
     this.activeItem = this.items[0];
+  }
+
+  isActiveLink(link: string): boolean {
+    return this.router.isActive(link, true);
   }
 }

@@ -15,6 +15,14 @@ const Users = [
     password: 'securepass',
     token: 'def456uvw789',
   },
+  {
+    id: 3,
+    firstName: 'TEST',
+    lastName: 'Testwoe',
+    email: 'test@op.pl',
+    password: 'test',
+    token: 'def456uvw789',
+  },
 ];
 
 export default Users;

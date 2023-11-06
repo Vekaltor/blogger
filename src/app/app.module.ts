@@ -8,13 +8,17 @@ import { FooterComponent } from './core/layout/footer/footer.component';
 import { HeaderComponent } from './core/layout/header/header.component';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { Test1Component } from './features/test1/test1.component';
-import { Test2Component } from './features/test2/test2.component';
 import { RedirectToLoginDirective } from './shared/redirect-to-login.directive';
 import { SharedModule } from './shared/shared.module';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { CategoriesComponent } from './features/categories/categories.component';
 import { CategoryService } from './core/services/category.service';
+import { LoginComponent } from './core/auth/components/login/login.component';
+
+import { CheckboxModule } from 'primeng/checkbox';
+import { RegisterComponent } from './core/auth/components/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,9 +27,10 @@ import { CategoryService } from './core/services/category.service';
     FooterComponent,
     HeaderComponent,
     Test1Component,
-    Test2Component,
     RedirectToLoginDirective,
     CategoriesComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,8 @@ import { CategoryService } from './core/services/category.service';
     SharedModule,
     CardModule,
     ButtonModule,
+    CheckboxModule,
+    FormsModule,
   ],
   providers: [CategoryService],
   bootstrap: [AppComponent],
