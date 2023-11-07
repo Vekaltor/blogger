@@ -1,19 +1,30 @@
-<app-layout-header></app-layout-header>
-<div class="w-max-body flex justify-content-center min-h-screen mb-5">
+<div class="relative flex flex-column gap-5">
+  <app-layout-header></app-layout-header>
 
-  <main class="grid gap-4 w-full md:flex-wrap">
+  <div class="w-max-body w-full flex justify-content-center min-h-screen">
 
-    <div class="col-12 md:col-9 ">
-      <router-outlet></router-outlet>
-    </div>
+    <main class="grid gap-4 w-full md:flex-wrap pl-3 pr-3">
 
-    <div class="flex flex-column gap-4 col-12 md:col">
-      <app-plugins></app-plugins>
-      <app-categories></app-categories>
-    </div>
+      <div class="sticky top-0 left-0 col-12 md:col-9 p-0">
+        <router-outlet></router-outlet>
+      </div>
 
-  </main>
+      <div class="flex flex-column gap-4 col-12 md:col p-0">
+        <app-plugins></app-plugins>
+        <app-categories></app-categories>
+        <app-plugins></app-plugins>
+        <app-categories></app-categories>
+        <app-plugins></app-plugins>
+        <app-categories></app-categories>
+      </div>
 
+    </main>
+  </div>
+
+  <app-layout-footer></app-layout-footer>
+
+  <div class="fixed ">
+    <p-scrollTop target="window" behavior="smooth" styleClass="custom-scrolltop opacity-80 bg-secondary-lighter"
+      [threshold]="300" icon="pi pi-arrow-up text-primary"></p-scrollTop>
+  </div>
 </div>
-<app-layout-footer></app-layout-footer>
-<p-scrollTop></p-scrollTop>

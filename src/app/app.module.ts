@@ -16,8 +16,8 @@ import { SharedModule } from './shared/shared.module';
     RegisterComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, HomeModule, SharedModule],
-  exports: [RedirectToLoginDirective],
-  providers: [],
+  exports: [],
+  providers: [RedirectToLoginDirective],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

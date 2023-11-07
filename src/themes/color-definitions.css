@@ -6,3 +6,7 @@
 .bg-secondary {
   background-color: var(--secondary) !important;
 }
+
+.bg-secondary-lighter {
+  background-color: var(--secondary-lighter) !important;
+}
