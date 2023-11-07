@@ -1,7 +1,12 @@
 <header class="w-full p-3 flex justify-content-center align-items-center border-bottom-1">
  <div class="w-max-body w-full flex justify-content-between align-items-center">
+
   <h1 class="text-2xl w-auto text-primary cursor-pointer" [routerLink]="'/'">Blogger</h1>
-  <p-tabMenu [model]="items" [activeItem]="activeItem" class="border-none">
+
+  <!-- DESKTOP MENU -->
+
+  <p-tabMenu *ngIf="!isMobile" [model]="items" [activeItem]="activeItem" class="border-none">
+
    <ng-template pTemplate="item" let-item class="border-none">
     <a
      class="p-menuitem-link flex justify-content-between align-items-center p-3 bg-transparent border-none :active-text-primary"
@@ -14,5 +19,40 @@
    </ng-template>
 
   </p-tabMenu>
+
+  <!-- MOBILE MENU -->
+
+  <p-sidebar *ngIf="isMobile" [(visible)]="displaySidebar" [baseZIndex]="1000" styleClass="w-screen">
+
+   <div class="p-sidebar-header">
+    <h1 class="text-2xl w-auto text-primary cursor-pointer" [routerLink]="'/'">Blogger</h1>
+   </div>
+
+   <div class="p-sidebar-content flex-column">
+    <p-tabMenu [model]="items" [activeItem]="activeItem" class="flex flex-column border-none"
+     styleClass="flex flex-wrap">
+
+     <ng-template pTemplate="item" let-item class="flex flex-wrap border-none">
+      <a
+       class="p-menuitem-link flex justify-content-between align-items-center p-3 bg-transparent border-none :active-text-primary"
+       [routerLink]="item.link">
+       <div class="flex align-items-center justify-content-between border-none text-white">
+        <span [class]="item.iconClass" [class.text-primary]="isActiveLink(item.link)"></span>
+        <span class="text-sm pl-2" [class.text-primary]="isActiveLink(item.link)">{{ item.name }}</span>
+       </div>
+      </a>
+     </ng-template>
+
+    </p-tabMenu>
+   </div>
+
+  </p-sidebar>
+
+  <!-- BUTTON FOR MOBILE MENU -->
+
+  <button *ngIf="isMobile" class="p-button p-button-text mobile-menu-button" (click)="toggleSidebar()">
+   <span class="pi pi-bars"></span>
+  </button>
+
  </div>
 </header>

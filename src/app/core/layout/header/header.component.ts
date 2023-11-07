@@ -1,5 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuService } from '../../services/menu.service';
 
 interface NavItem {
   name: string;
@@ -13,39 +20,35 @@ interface NavItem {
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  public items: Array<NavItem> | undefined;
-  public activeItem: NavItem | undefined;
+  @Output() public displaySidebar: boolean = false;
+  @Output() public isMobile: boolean = false;
+  @Output() public items: Array<NavItem> | undefined;
+  @Output() public activeItem: NavItem | undefined;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private menuService: MenuService) {}
 
   ngOnInit() {
-    this.items = [
-      {
-        name: 'Home',
-        link: '',
-        iconClass: 'pi pi-home',
-      },
-      {
-        name: 'Contact',
-        link: 'contact',
-        iconClass: 'pi pi-eye',
-      },
-      {
-        name: 'About',
-        link: 'about',
-        iconClass: 'pi pi-id-card',
-      },
-      {
-        name: 'Profile',
-        link: 'profile',
-        iconClass: 'pi pi-user',
-      },
-    ];
+    this.items = this.menuService.getMenuItems();
 
     this.activeItem = this.items[0];
+    this.checkWindowSize();
   }
 
-  isActiveLink(link: string): boolean {
+  public isActiveLink(link: string): boolean {
     return this.router.isActive(link, true);
+  }
+
+  // Dodaj listener na zmiany rozmiaru okna
+  @HostListener('window:resize', ['$event'])
+  public onResize(event: Event): void {
+    this.checkWindowSize();
+  }
+
+  public toggleSidebar(): void {
+    this.displaySidebar = !this.displaySidebar;
+  }
+
+  private checkWindowSize(): void {
+    this.isMobile = window.innerWidth < 768;
   }
 }
