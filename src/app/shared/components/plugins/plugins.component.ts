@@ -3,7 +3,6 @@ import { Component, Output } from '@angular/core';
 @Component({
   selector: 'app-plugins',
   templateUrl: './plugins.component.html',
-  styleUrls: ['./plugins.component.css'],
 })
 export class PluginsComponent {
   @Output() public socialPlugins = [

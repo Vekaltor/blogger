@@ -4,9 +4,9 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { AuthGuard } from './core/auth/auth-guard.guard';
 
-import { NotFound404Component } from './shared/not-found404/not-found404.component';
+import { NotFound404Component } from './shared/components/not-found404/not-found404.component';
 import { LoginComponent } from './core/auth/components/login/login.component';
-import { Test1Component } from './features/test1/test1.component';
+import { Test1Component } from './shared/components/test1/test1.component';
 import { RegisterComponent } from './core/auth/components/register/register.component';
 import { PostsComponent } from './features/posts/posts.component';
 import { ProfileComponent } from './features/profile/profile.component';
