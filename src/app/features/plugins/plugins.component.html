@@ -1,0 +1,15 @@
+<aside>
+ <div class="card p-3 bg-secondary card-custom-border-bottom">
+
+  <h4 class="text-primary text-lg pb-2 mb-3 w-max border-bottom-2 border-primary ">Social Plugins</h4>
+
+  <div class="p-1 text-xs flex flex-wrap justify-content-center align-items-center gap-2 ">
+
+   <div class="p-2 pl-4 pr-4" *ngFor="let plugin of socialPlugins"
+    [ngStyle]="plugin.backgroundGradient ? { 'background': plugin.backgroundGradient } : { 'background-color': plugin.backgroundColor }">
+    <span name="plugin.name" class="text-2xl" [ngClass]="plugin.iconStyle"></span>
+   </div>
+
+  </div>
+ </div>
+</aside>

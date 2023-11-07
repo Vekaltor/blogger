@@ -1,119 +1,14 @@
 <app-layout-header></app-layout-header>
-<div class="w-max-body flex justify-content-center">
+<div class="w-max-body flex justify-content-center min-h-screen mb-5">
 
-  <main class="grid gap-3 w-full p-3 md:flex-wrap">
+  <main class="grid gap-4 w-full md:flex-wrap">
 
-    <div class="col-12 md:col-9">
+    <div class="col-12 md:col-9 ">
       <router-outlet></router-outlet>
-      <div class="flex flex-wrap w-full justify-content-center align-items-center gap-4">
-
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }"
-          class="bg-secondary border-bottom-1 border-dotted border-none border-gray-800">
-          <ng-template pTemplate="header">
-            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
-          </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-            numquam
-            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
-            cupiditate neque
-            quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <p-button label="Learn more" icon="pi pi-book"></p-button>
-          </ng-template>
-        </p-card>
-
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }"
-          class="bg-secondary border-bottom-1 border-dotted border-none border-gray-800">
-          <ng-template pTemplate="header">
-            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
-          </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-            numquam
-            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
-            cupiditate neque
-            quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <p-button label="Learn more" icon="pi pi-book"></p-button>
-          </ng-template>
-        </p-card>
-
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }"
-          class="bg-secondary border-bottom-1 border-dotted border-none border-gray-800">
-          <ng-template pTemplate="header">
-            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
-          </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-            numquam
-            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
-            cupiditate neque
-            quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <p-button label="Learn more" icon="pi pi-book"></p-button>
-          </ng-template>
-        </p-card>
-
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }"
-          class="bg-secondary border-bottom-1 border-dotted border-none border-gray-800">
-          <ng-template pTemplate="header">
-            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
-          </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-            numquam
-            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
-            cupiditate neque
-            quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <p-button label="Learn more" icon="pi pi-book"></p-button>
-          </ng-template>
-        </p-card>
-
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }"
-          class="bg-secondary border-bottom-1 border-dotted border-none border-gray-800">
-          <ng-template pTemplate="header">
-            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
-          </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-            numquam
-            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
-            cupiditate neque
-            quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <p-button label="Learn more" icon="pi pi-book"></p-button>
-          </ng-template>
-        </p-card>
-
-        <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }"
-          class="bg-secondary border-bottom-1 border-dotted border-none border-gray-800">
-          <ng-template pTemplate="header">
-            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
-          </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
-            numquam
-            deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
-            cupiditate neque
-            quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <p-button label="Learn more" icon="pi pi-book"></p-button>
-          </ng-template>
-        </p-card>
-
-
-      </div>
     </div>
 
-    <div class="col-12 md:col">
+    <div class="flex flex-column gap-4 col-12 md:col">
+      <app-plugins></app-plugins>
       <app-categories></app-categories>
     </div>
 
@@ -121,3 +16,4 @@
 
 </div>
 <app-layout-footer></app-layout-footer>
+<p-scrollTop></p-scrollTop>

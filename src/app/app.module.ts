@@ -19,6 +19,13 @@ import { LoginComponent } from './core/auth/components/login/login.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { RegisterComponent } from './core/auth/components/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { PluginsComponent } from './features/plugins/plugins.component';
+import { PostsComponent } from './features/posts/posts.component';
+import { PostsApiService } from './core/services/posts-api.service';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { ProfileComponent } from './features/profile/profile.component';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 @NgModule({
   declarations: [
@@ -31,6 +38,9 @@ import { FormsModule } from '@angular/forms';
     CategoriesComponent,
     LoginComponent,
     RegisterComponent,
+    PluginsComponent,
+    PostsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +51,11 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     CheckboxModule,
     FormsModule,
+    AvatarModule,
+    AvatarGroupModule,
+    ScrollTopModule,
   ],
-  providers: [CategoryService],
+  providers: [CategoryService, PostsApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

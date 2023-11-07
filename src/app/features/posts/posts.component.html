@@ -1,0 +1,50 @@
+<section class="flex flex-wrap  gap-4">
+ <ng-container *ngIf="posts$ | async as posts; else loading">
+  <article class="flex-grow-1 card p-3 bg-secondary card-custom-border-bottom" *ngFor="let post of posts">
+   <div class="w-full relative">
+    <div class="flex">
+     <p-avatar image="../../../assets//images/profile.jpg" styleClass="mr-3 border-circle" size="large"
+      shape="circle"></p-avatar>
+     <div class="flex flex-column gap-1 pt-2">
+      <span class="text-xs">
+       {{post.author}}
+      </span>
+      <span class="text-xs text-gray-600">
+       {{post.createdAt | date: 'MMMM d, y' }}
+      </span>
+     </div>
+    </div>
+
+    <header>
+     <h4 class="font-normal text-2xl pt-3 pl-0">
+      {{ post.title }}
+     </h4>
+    </header>
+
+    <p class="p-3 pl-0 pt-1 text-sm text-gray-300">
+     {{ post.description }}
+    </p>
+
+    <footer class="flex justify-content-between">
+     <p-button label="READ MORE" icon="pi pi-search" [text]="true"></p-button>
+     <div class="flex gap-1 align-items-center justify-content-center">
+      <span *ngFor="let tag of post.tags" class="text-xs text-primary-300 border-1 border-gray-500 p-1 pl-3 pr-3">
+       {{tag}}
+      </span>
+     </div>
+    </footer>
+
+    <aside class="absolute top-0 right-0">
+     <p-button class="custom-likes"
+      styleClass=" p-button-icon-only bg-transparent pl-3 pr-3 text-xs hover:bg-primary hover:red-900">
+      <i class="pi pi-heart-fill mr-2 text-xs "></i>
+      {{ post.likes }}
+     </p-button>
+    </aside>
+
+   </div>
+  </article>
+ </ng-container>
+
+ <ng-template #loading>Loading...</ng-template>
+</section>

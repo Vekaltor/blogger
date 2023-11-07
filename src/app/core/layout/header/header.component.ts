@@ -28,11 +28,16 @@ export class HeaderComponent implements OnInit {
       {
         name: 'Contact',
         link: 'contact',
+        iconClass: 'pi pi-eye',
+      },
+      {
+        name: 'About',
+        link: 'about',
         iconClass: 'pi pi-id-card',
       },
       {
-        name: 'login',
-        link: 'auth/login',
+        name: 'Profile',
+        link: 'profile',
         iconClass: 'pi pi-user',
       },
     ];
