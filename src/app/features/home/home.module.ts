@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { CategoriesComponent } from '../categories/categories.component';
+import { CategoriesComponent } from '../../shared/components/categories/categories.component';
+import { CategoryService } from 'src/app/core/services/category.service';
 import { FooterComponent } from 'src/app/core/layout/footer/footer.component';
 import { HeaderComponent } from 'src/app/core/layout/header/header.component';
 import { HomeComponent } from './home.component';
@@ -21,5 +22,7 @@ import { Test1Component } from 'src/app/shared/components/test1/test1.component'
     Test1Component,
   ],
   imports: [AppRoutingModule, PostsModule, SharedModule],
+  exports: [],
+  providers: [CategoryService],
 })
 export class HomeModule {}

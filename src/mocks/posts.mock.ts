@@ -1,4 +1,6 @@
-export const posts = [
+import { Post } from 'src/app/core/models/posts.model';
+
+export const posts: Array<Post> = [
   {
     id: 1,
     title: 'Przepis na pyszne ciasto czekoladowe',

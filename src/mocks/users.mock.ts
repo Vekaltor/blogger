@@ -1,4 +1,6 @@
-const Users = [
+import FakeUser from 'src/app/core/models/users.model';
+
+const Users: Array<FakeUser> = [
   {
     id: 1,
     firstName: 'John',

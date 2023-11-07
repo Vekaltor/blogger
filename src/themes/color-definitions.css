@@ -6,7 +6,3 @@
 .bg-secondary {
   background-color: var(--secondary) !important;
 }
-
-.card-custom-border-bottom {
-  border-bottom: solid 10px var(--secondary-lighter) !important;
-}

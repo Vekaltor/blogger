@@ -1,10 +1,11 @@
+/* LIBRARIES */
 @import "~primeflex/primeflex.css";
 @import "~primeicons/primeicons.css";
 @import "~primeng/resources/primeng.min.css";
 
+/* MY DEFINITIONS */
 @import "./themes/my-theme.css";
-@import "./themes/color-definitions.css";
-@import "./themes/sizing-definitions.css";
+@import "./themes/my-definitions.css";
 
 /* CLEAR STYLES*/
 :root,
