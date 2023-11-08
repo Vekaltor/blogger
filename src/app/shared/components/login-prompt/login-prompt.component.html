@@ -1,0 +1,18 @@
+<p-dialog header="Login Required" [visible]="true" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+ [resizable]="true" [closable]="false" class="fadeinleft animation-duration-300">
+
+ <p class="m-0 mt-1 font-family-secondary">
+  You need to log in to access this content.
+ </p>
+
+ <div class="mt-5 mb-1 flex gap-2 justify-content-center ">
+
+  <p-button type="button" class="btn btn-primary mr-2"
+   styleClass="text-sm font-family-secondary font-bold fadeinleft animation-duration-300" (click)="goToLogin()">Go to
+   Login</p-button>
+
+  <p-button type="button" [text]="true" class="btn btn-secondary" (click)="closePrompt()"
+   styleClass="text-sm font-family-secondary font-bold fadeinright animation-duration-300">Cancel</p-button>
+
+ </div>
+</p-dialog>

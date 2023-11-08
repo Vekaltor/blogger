@@ -5,6 +5,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DialogModule } from 'primeng/dialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { SidebarModule } from 'primeng/sidebar';
@@ -20,6 +21,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
     ButtonModule,
     CardModule,
     CheckboxModule,
+    DialogModule,
     InputTextareaModule,
     ScrollTopModule,
     SidebarModule,

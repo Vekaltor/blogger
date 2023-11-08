@@ -12,6 +12,10 @@ import { PluginsComponent } from 'src/app/shared/components/plugins/plugins.comp
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { Test1Component } from 'src/app/shared/components/test1/test1.component';
+import { LoginPromptComponent } from 'src/app/shared/components/login-prompt/login-prompt.component';
+import { LoginPromptService } from 'src/app/core/services/login-prompt.service';
+import { ContactComponent } from 'src/app/shared/components/contact/contact.component';
+import { NotFound404Component } from 'src/app/shared/components/not-found404/not-found404.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,12 @@ import { Test1Component } from 'src/app/shared/components/test1/test1.component'
     HomeComponent,
     PluginsComponent,
     Test1Component,
+    LoginPromptComponent,
+    ContactComponent,
+    NotFound404Component,
   ],
   imports: [AppRoutingModule, PostsModule, SharedModule],
   exports: [],
-  providers: [CategoryService, MenuService],
+  providers: [CategoryService, MenuService, LoginPromptService],
 })
 export class HomeModule {}

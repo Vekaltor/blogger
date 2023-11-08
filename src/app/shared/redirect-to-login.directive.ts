@@ -5,9 +5,9 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../core/services/auth.service';
+import { LoginPromptService } from '../core/services/login-prompt.service';
 
 @Directive({
   selector: '[appRedirectToLogin]',
@@ -16,12 +16,14 @@ export class RedirectToLoginDirective implements OnInit, OnDestroy {
   private isAuthenticated: boolean = false;
   private authSubscription!: Subscription;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private loginPromptService: LoginPromptService
+  ) {}
 
   @Input() conditionToRedirect: boolean = true;
 
   ngOnInit(): void {
-    console.log('XD');
     this.authSubscription = this.authService.isAuthenticated$.subscribe(
       (isAuthenticated) => (this.isAuthenticated = isAuthenticated)
     );
@@ -29,22 +31,12 @@ export class RedirectToLoginDirective implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.authSubscription.unsubscribe();
+    this.loginPromptService.handlePopupClosed();
   }
 
-  @HostListener('click') onClick(): void {
-    console.log('XD');
+  @HostListener('click') public onClick(): void {
     if (!this.isAuthenticated && this.conditionToRedirect) {
-      const shouldRedirect = confirm(
-        'Musisz być zalogowany. Chcesz przejść do logowania?'
-      );
-
-      if (shouldRedirect) {
-        this.router.navigate(['/auth/login']);
-      } else {
-        this.router.navigate(['']);
-      }
-    } else {
-      console.log('Wykonaj akcję dla zalogowanego użytkownika.');
+      this.loginPromptService.handleShowPopup();
     }
   }
 }
