@@ -21,6 +21,7 @@ export class RedirectToLoginDirective implements OnInit, OnDestroy {
   @Input() conditionToRedirect: boolean = true;
 
   ngOnInit(): void {
+    console.log('XD');
     this.authSubscription = this.authService.isAuthenticated$.subscribe(
       (isAuthenticated) => (this.isAuthenticated = isAuthenticated)
     );
@@ -31,6 +32,7 @@ export class RedirectToLoginDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('click') onClick(): void {
+    console.log('XD');
     if (!this.isAuthenticated && this.conditionToRedirect) {
       const shouldRedirect = confirm(
         'Musisz być zalogowany. Chcesz przejść do logowania?'
@@ -38,6 +40,8 @@ export class RedirectToLoginDirective implements OnInit, OnDestroy {
 
       if (shouldRedirect) {
         this.router.navigate(['/auth/login']);
+      } else {
+        this.router.navigate(['']);
       }
     } else {
       console.log('Wykonaj akcję dla zalogowanego użytkownika.');

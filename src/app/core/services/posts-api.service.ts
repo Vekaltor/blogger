@@ -4,6 +4,6 @@ import { Post } from '../models/posts.model';
 
 export class PostsApiService {
   public getFakePosts(): Observable<Array<Post>> {
-    return of(posts).pipe(delay(3000));
+    return of(posts).pipe(delay(2000));
   }
 }

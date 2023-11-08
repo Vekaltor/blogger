@@ -9,11 +9,11 @@
 
    <ng-template pTemplate="item" let-item class="border-none">
     <a
-     class="p-menuitem-link flex justify-content-between align-items-center p-3 bg-transparent border-none :active-text-primary"
+     class="p-menuitem-link flex justify-content-between align-items-center p-3 bg-transparent border-none :active-text-primary :active-border-none"
      [routerLink]="item.link">
      <div class="flex align-items-center justify-content-between border-none text-white  ">
       <span [class]="item.iconClass" [class.text-primary]="isActiveLink(item.link)"></span>
-      <span class="text-sm pl-2 " [class.text-primary]="isActiveLink(item.link)"> {{ item.name }}</span>
+      <span class="text-sm pl-2 uppercase" [class.text-primary]="isActiveLink(item.link)"> {{ item.name }}</span>
      </div>
     </a>
    </ng-template>

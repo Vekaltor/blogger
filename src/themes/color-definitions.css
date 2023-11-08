@@ -10,3 +10,7 @@
 .bg-secondary-lighter {
   background-color: var(--secondary-lighter) !important;
 }
+
+.border-secondary-lighter {
+  border-color: var(--secondary-lighter);
+}

@@ -1,0 +1,32 @@
+<section>
+  <div class="flex flex-column gap-2">
+
+    <header>
+      <span class="block border-bottom-1 border-secondary-lighter pb-3">
+        <h2 class="font-normal text-3xl">Contact Us</h2>
+      </span>
+    </header>
+
+    <form>
+      <div class="grid max-w-75 gap-2 m-3 mt-5">
+        <div class="col-12 flex gap-2 p-0">
+          <input id="name" type="text" placeholder="Name" pInputText
+            class="p-2 w-6 h-2rem bg-white border-primary-50 border-1 border-round text-50" [(ngModel)]="labels.name"
+            name="name">
+
+          <input id="email" type="text" placeholder="Email" pInputText
+            class="p-2 w-6 h-2rem bg-white border-primary-50 border-1 border-round text-50" [(ngModel)]="labels.email"
+            name="email">
+        </div>
+
+        <textarea id="message" type="text" placeholder="Message" pInputTextarea [autoResize]="false"
+          class="max-w-full min-w-full h-6rem bg-white border-primary-50 border-1 border-round text-50 text-sm p-2"
+          [(ngModel)]="labels.message" name="message"></textarea>
+
+
+        <p-button class="col-12 p-0" styleClass="w-full text-xs justify-content-center">Send</p-button>
+      </div>
+    </form>
+
+  </div>
+</section>
