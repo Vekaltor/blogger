@@ -26,8 +26,8 @@
     </p>
 
     <footer class="flex flex-column-reverse align-items-start gap-2 sm:gap-0 sm:justify-content-between sm:flex-row">
-     <p-button label="READ MORE" icon="pi pi-search" [text]="true"
-      styleClass="font-family-secondary text-sm"></p-button>
+     <p-button label="READ MORE" icon="pi pi-search" [text]="true" styleClass="font-family-secondary text-sm"
+      (click)="handleRedirectToPost(post.id)"></p-button>
      <div
       class="flex flex-wrap gap-1 align-items-start justify-content-start sm:flex-nowrap sm:align-items-center sm:justify-content-center">
       <span *ngFor="let tag of post.tags"

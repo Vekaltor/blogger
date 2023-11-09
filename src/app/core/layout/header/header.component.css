@@ -6,6 +6,10 @@
   color: var(--primary-200);
 }
 
-::ng-deep .p-tabmenu:active span {
+::ng-deep .p-tabmenu:active span a {
   color: var(--primary-200) !important;
+}
+
+.p-tabmenu li.ui-tabs-outline {
+  outline: none;
 }

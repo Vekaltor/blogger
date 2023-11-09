@@ -6,8 +6,8 @@ import {
   OnInit,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../core/services/auth.service';
-import { LoginPromptService } from '../core/services/login-prompt.service';
+import { AuthService } from '../../core/services/auth.service';
+import { LoginPromptService } from '../../core/services/login-prompt.service';
 
 @Directive({
   selector: '[appRedirectToLogin]',

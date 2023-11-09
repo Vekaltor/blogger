@@ -2,6 +2,51 @@ import { Post } from 'src/app/core/models/posts.model';
 
 export const posts: Array<Post> = [
   {
+    id: 50,
+    title: 'Porady dla początkujących programistów',
+    author: 'Tomasz Nowak',
+    idAuthor: 105,
+    description:
+      'Dzisiaj chciałbym podzielić się kilkoma cennymi radami dla początkujących programistów. Rozumiem, że rozpoczynanie przygody z programowaniem może być trudne, dlatego postanowiłem stworzyć krótką listę wskazówek, które mogą Ci pomóc.',
+    html: `
+   <p>Zacznij od podstaw: Nie bój się zacząć od podstawowych języków programowania. Zrozumienie podstaw, takich jak składnia i struktura danych, jest kluczowe dla budowania solidnej wiedzy.</p>
+   <p>Ćwicz codziennie: Programowanie to umiejętność, którą trzeba rozwijać codziennie. Nawet krótkie sesje codziennego kodowania mogą przynieść znaczne efekty. Karolina Kowalczyk dodaje: "Regularne ćwiczenia pomogą Ci utrwalić wiedzę i stworzyć trwałe nawyki programistyczne."</p>
+   <p>Bądź ciekawy: W świecie programowania zawsze pojawiają się nowe technologie i języki. Bądź ciekawy, eksperymentuj i ucz się na bieżąco. Adam Czarnecki podkreśla: "Śledzenie nowości w branży pozwoli Ci być na bieżąco z trendami i unikać technologicznego zastarzałego."</p>
+   <p>Rozwiązuj problemy: Programowanie to w dużej mierze rozwiązywanie problemów. Pracuj nad różnymi projektami, które wymagają kreatywnego myślenia. Marta Wiśniewska zauważa: "Rozwiązywanie problemów to kluczowa umiejętność w programowaniu. Im więcej różnorodnych wyzwań podjęłoś, tym bardziej rozwinięte są Twoje umiejętności."</p>
+   <p>Dołącz do społeczności: Nie jesteś sam. Istnieje wiele społeczności programistycznych online, gdzie możesz uzyskać wsparcie, zadawać pytania i dzielić się wiedzą. Tomasz Nowak radzi: "Dołączenie do społeczności programistycznej to doskonały sposób na zdobycie mentorów, wymianę doświadczeń i naukę od bardziej doświadczonych programistów."</p>
+   <p>Mam nadzieję, że te rady pomogą Ci w rozwoju jako programisty. Pamiętaj, że kluczowe jest cierpliwe podejście i systematyczna praca. Powodzenia!</p>
+  `,
+    image: 'ścieżka/do/zdjęcia5.jpg',
+    createdAt: '2023-05-22T14:00:00',
+    modified: [],
+    tags: ['programming'],
+    likes: 12,
+    comments: [
+      {
+        id: 1,
+        idPost: 5,
+        idAuthor: 203,
+        name: 'Karolina',
+        surname: 'Kowalczyk',
+        description:
+          'Dobre rady! Zgadzam się zwłaszcza z punktem o codziennym ćwiczeniu. To naprawdę czyni różnicę w nauce programowania. Dodałabym jeszcze, że warto szukać projektów open source do udziału. To doskonała okazja do nauki poprzez praktykę.',
+        createdAt: '2023-02-11T10:30:00',
+        likes: 8,
+      },
+      {
+        id: 2,
+        idPost: 5,
+        idAuthor: 204,
+        name: 'Adam',
+        surname: 'Czarnecki',
+        description:
+          'Dodatkowo polecam udział w hackathonach. To świetna okazja do praktyki i nauki współpracy z innymi programistami. Hackathony stawiają Cię przed rzeczywistymi wyzwaniami i pozwalają poznać różne dziedziny programowania.',
+        createdAt: '2023-02-11T12:45:00',
+        likes: 10,
+      },
+    ],
+  },
+  {
     id: 1,
     title: 'Przepis na pyszne ciasto czekoladowe',
     author: 'Anna Kowalska',

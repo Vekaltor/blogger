@@ -20,6 +20,7 @@ export class AuthGuard {
     const currentUser: FakeUser = JSON.parse(
       localStorage.getItem('currentUser')!
     );
+    console.log(currentUser);
 
     if (currentUser?.token) {
       return true;

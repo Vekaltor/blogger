@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, delay, map, tap } from 'rxjs';
 import { UserApiService } from './user-api.service';
 import { LoginCredentials } from '../models/auth.model';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +13,7 @@ export class AuthService {
   isAuthenticated$: Observable<boolean> =
     this.isAuthenticatedSubject.asObservable();
 
-  constructor(private UserApiService: UserApiService, private router: Router) {}
+  constructor(private UserApiService: UserApiService) {}
 
   public login(credentials: LoginCredentials): Observable<boolean> {
     const { email, password, rememberMe } = credentials;

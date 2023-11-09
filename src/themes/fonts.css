@@ -71,3 +71,7 @@
 .font-family-secondary {
   font-family: var(--font-family-secondary);
 }
+
+.font-family {
+  font-family: var(--font-family);
+}

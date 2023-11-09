@@ -6,4 +6,8 @@ export class PostsApiService {
   public getFakePosts(): Observable<Array<Post>> {
     return of(posts).pipe(delay(2000));
   }
+
+  public getPostById(id: number): Observable<Post | undefined> {
+    return of(posts.find((post) => (post.id = id)));
+  }
 }
