@@ -1,8 +1,11 @@
 # Blogger - Angular
 
-A feature-rich web application built with Angular, PrimeNG, and Bootstrap 4, the Blogger platform offers users the ability to browse posts, log in, and register. Future plans involve expanding 
-functionality to enable users to create, filter, and manage their posts through a user panel. Notably, the application incorporates a directive to manage restricted 
-access and a global error handling system with a notification component.
+A feature-rich web application built with Angular, PrimeNG, and Bootstrap 4, the Blogger platform offers users the 
+ability to browse posts, log in, and register. Future plans involve expanding functionality to enable 
+users to create, filter, and manage their posts through a user panel. Notably, the application 
+incorporates a directive to manage restricted access, a global error handling 
+system with a notification component, and features a lazy loading mechanism 
+for posts, and is designed to be fully responsive.
 
 ## Technologies:
 <p>Project is created with:</p>
@@ -19,9 +22,11 @@ access and a global error handling system with a notification component.
 
 Temporarily unavailable
 
-![image](https://user-images.githubusercontent.com/56607344/198079891-9b02fe6e-3a19-4147-9ea7-39d4928ae11a.png)
+![image](https://github.com/Vekaltor/blogger/assets/56607344/933ad00d-a09e-40f5-96f4-c4521ff2e390)
 
-![image](https://user-images.githubusercontent.com/56607344/203132252-a28f5c05-dbc6-46e8-91b5-7acc09424240.png)
+![image](https://github.com/Vekaltor/blogger/assets/56607344/ef963760-9c1c-4d30-ba7c-fe48429e3c7a)
+
+![image](https://github.com/Vekaltor/blogger/assets/56607344/253b632f-510c-4122-8c6e-01c0c35b3a53)
 
 
 ## Setup
@@ -51,6 +56,11 @@ ensuring that only authorized users can access specific features.
 The Blogger platform offers a global system for handling HTTP errors and application events.
 In case of errors, successes or information, users will be notified with a pop-up modal showing the type of event and its content.
 
+### - Lazy Loading of Posts
+Blogger platform implements lazy loading for posts. 
+Instead of loading all posts at once, the application loads posts in batches, such as 5 posts at a time. 
+As users scroll, additional batches of posts are dynamically loaded, providing a seamless and efficient browsing experience.
+
 
 ## Future Features:
 
@@ -63,3 +73,9 @@ A robust filtering system will be implemented, enabling users to find posts base
 ### - User Panel
 A dedicated user panel will empower users to modify, edit, add, and delete their posts with ease.
 This feature enhances the user's control over their content.
+
+### - Comment System
+The Blogger platform will introduce a comprehensive commenting system, allowing users 
+to engage in discussions about posts. Users can leave comments and reply 
+to existing ones, enhancing the sense of community and interaction.
+
