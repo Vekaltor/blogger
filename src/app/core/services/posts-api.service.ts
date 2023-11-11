@@ -1,10 +1,16 @@
-import { Observable, delay, of } from 'rxjs';
+import { Observable, catchError, delay, map, of, throwError } from 'rxjs';
 import { posts } from 'src/mocks/posts.mock';
 import { Post, PostParams } from '../models/posts.model';
+import { GlobalNotificationsHandler } from '../errors/global-notifications-handler';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
+@Injectable({ providedIn: 'root' })
 export class PostsApiService {
   private params: PostParams = {};
   private perLoad: number = 5;
+
+  constructor(private notificationHandler: GlobalNotificationsHandler) {}
 
   public getPostById(id: number): Observable<Post | undefined> {
     return of(posts.find((post) => (post.id = id)));
@@ -39,7 +45,7 @@ export class PostsApiService {
       })
       .slice(startIndex, endIndex);
 
-    return of(filteredPosts).pipe(delay(3000));
+    return of(filteredPosts).pipe(delay(0));
   }
 
   public getPerLoad() {
@@ -54,7 +60,19 @@ export class PostsApiService {
       perLoad,
       currentAmount
     );
-    return of(posts.slice(startIndex, endIndex)).pipe(delay(2000));
+    return of(posts.slice(startIndex, endIndex)).pipe(
+      delay(0),
+      map((data) => {
+        this.notificationHandler.showSuccess('Pobrano dane pomyślnie !');
+        return data;
+      }),
+      catchError((error: HttpErrorResponse) => {
+        this.notificationHandler.showError(
+          'Wystąpił błąd podczas pobierania danych.'
+        );
+        return throwError(error);
+      })
+    );
   }
 
   private getRangeOfPosts(perLoad: number, currentAmount: number) {

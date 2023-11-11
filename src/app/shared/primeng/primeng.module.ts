@@ -11,6 +11,7 @@ import { ScrollTopModule } from 'primeng/scrolltop';
 import { SidebarModule } from 'primeng/sidebar';
 import { SkeletonModule } from 'primeng/skeleton';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
     SidebarModule,
     SkeletonModule,
     TabMenuModule,
+    MessagesModule,
   ],
   bootstrap: [],
 })

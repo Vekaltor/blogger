@@ -14,6 +14,7 @@ import { LoginPromptComponent } from 'src/app/shared/components/login-prompt/log
 import { LoginPromptService } from 'src/app/core/services/login-prompt.service';
 import { ContactComponent } from 'src/app/shared/components/contact/contact.component';
 import { NotFound404Component } from 'src/app/shared/components/not-found404/not-found404.component';
+import { NotificationComponent } from 'src/app/shared/components/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NotFound404Component } from 'src/app/shared/components/not-found404/not
     LoginPromptComponent,
     ContactComponent,
     NotFound404Component,
+    NotificationComponent,
   ],
   imports: [AppRoutingModule, PostsModule, SharedModule],
   exports: [],
