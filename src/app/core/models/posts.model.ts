@@ -23,3 +23,9 @@ export interface Post {
   likes: number;
   comments: Comment[];
 }
+
+export interface PostParams {
+  id?: number;
+  author?: string;
+  categories?: Array<string>;
+}

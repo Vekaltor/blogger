@@ -6,10 +6,10 @@ import { HomeComponent } from './features/home/home.component';
 import { LoginComponent } from './core/auth/components/login/login.component';
 import { NgModule } from '@angular/core';
 import { NotFound404Component } from './shared/components/not-found404/not-found404.component';
-import { PostsComponent } from './features/posts/posts.component';
 import { RegisterComponent } from './core/auth/components/register/register.component';
 import { ProfileComponent } from './features/profile/profile.component';
 import { PostMoreComponent } from './features/posts/components/post-more/post-more.component';
+import { ListPostsComponent } from './features/posts/containers/list-posts/list-posts.component';
 
 const routes: Routes = [
   {
@@ -24,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: PostsComponent,
+        component: ListPostsComponent,
       },
       {
         path: 'post/:id',

@@ -1,22 +1,30 @@
-<div class="border-bottom-1 border-gray-900 p-4 bg-transparent">
+<div class="border-bottom-1 border-gray-900 p-4 bg-transparent" *ngFor="let i of getRange(); let index = index">
 
- <div class="flex mb-3">
+ <div class="flex mb-3 justify-content-between">
+  <div class="flex align-items-center">
+   <p-skeleton shape="circle" height="48px" width="48px" styleClass="mr-2" class="border-circle"></p-skeleton>
 
-  <p-skeleton shape="circle" size="4rem" styleClass="mr-2"></p-skeleton>
+   <div>
+    <p-skeleton width="10rem" height="14px" styleClass="mb-2"></p-skeleton>
+    <p-skeleton width="5rem" height="14px" styleClass="mb-2"></p-skeleton>
+   </div>
+  </div>
 
   <div>
-   <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
-   <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
-   <p-skeleton height=".5rem"></p-skeleton>
+   <p-skeleton width="4rem" height="2rem"></p-skeleton>
   </div>
+
  </div>
 
-
- <p-skeleton width="100%" height="150px"></p-skeleton>
+ <p-skeleton width="100%" height="100px"></p-skeleton>
 
  <div class="flex justify-content-between align-items-end mt-3">
-  <p-skeleton width="8rem" height="3rem"></p-skeleton>
-  <p-skeleton width="4rem" height="2rem"></p-skeleton>
+  <p-skeleton width="8rem" height="35px" class="ml-3"></p-skeleton>
+  <div class="flex gap-1">
+   <p-skeleton width="4rem" height="1.5rem"></p-skeleton>
+   <p-skeleton width="4rem" height="1.5rem"></p-skeleton>
+   <p-skeleton width="4rem" height="1.5rem"></p-skeleton>
+  </div>
  </div>
 
 </div>

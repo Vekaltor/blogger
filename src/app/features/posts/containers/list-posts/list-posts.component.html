@@ -1,0 +1,7 @@
+<section class="flex flex-wrap gap-4">
+ <app-post class="w-full" *ngFor="let post of posts" [post]="post"></app-post>
+</section>
+
+<ng-template [ngIf]="loading || posts.length === 0">
+ <app-posts-loading [perLoad]="this.postsApiService.getPerLoad()"></app-posts-loading>
+</ng-template>

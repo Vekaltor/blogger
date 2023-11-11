@@ -1,68 +1,68 @@
 <div class="container mt-5 font-family-secondary " *ngIf="post">
- <div class="flex flex-column gap-3 font-family">
+  <div class="flex flex-column gap-3 font-family">
 
-  <div class="flex justify-content-between border-bottom-1 border-gray-900 p-3 bg-secondary">
-   <header>
-    <h1 class="text-3xl font-normal ">{{ post.title }}</h1>
-    <p class="text-sm text-primary-300">By {{ post.author }} | {{ post.createdAt | date: 'longDate' }}</p>
-    <p class="text-xs font-light font-family-secondary text-gray-300 pt-1"
-     *ngIf="post.modified && post.modified.length > 0">
-     Editted: {{ post.modified[0] | date: 'longDate' }}
-    </p>
-   </header>
+    <div class="flex justify-content-between border-bottom-1 border-gray-900 p-3 bg-secondary">
+      <header>
+        <h1 class="text-3xl font-normal ">{{ post.title }}</h1>
+        <p class="text-sm text-primary-300">By {{ post.author }} | {{ post.createdAt | date: 'longDate' }}</p>
+        <p class="text-xs font-light font-family-secondary text-gray-300 pt-1"
+          *ngIf="post.modified && post.modified.length > 0">
+          Editted: {{ post.modified[0] | date: 'longDate' }}
+        </p>
+      </header>
 
-   <div class="align-items-end align-self-center">
-    <p-button appRedirectToLogin class="custom-likes"
-     styleClass=" p-button-icon-only bg-transparent pl-3 pr-3 text-xs hover:bg-primary hover:red-900">
-     <i class="pi pi-heart-fill mr-2 text-xs "></i>
-     {{ post.likes }}
-    </p-button>
+      <div class="align-items-end align-self-center">
+        <p-button appRedirectToLogin class="custom-likes"
+          styleClass=" p-button-icon-only bg-transparent pl-3 pr-3 text-xs hover:bg-primary hover:red-900">
+          <i class="pi pi-heart-fill mr-2 text-xs "></i>
+          {{ post.likes }}
+        </p-button>
 
-   </div>
+      </div>
 
-  </div>
-
-  <div class="p-3">
-   <div [innerHtml]="post.html" class="card font-light text-sm font-family-secondary line-height-4	"></div>
-  </div>
-
-  <div class="flex gap-2 border-bottom-1 border-top-1 p-3 border-gray-900">
-   <span *ngFor="let tag of post.tags"
-    class="text-xs border-1 border-gray-500 p-1 pl-3 pr-3 font-family-secondary bg-gray-500"
-    style="border-radius: 0.7rem;">
-    {{tag}}
-   </span>
-  </div>
-
-  <div class="flex flex-column gap-5 font-family-secondary text-sm">
-   <header>
-    <h3 class="ml-3 font-normal text-primary-300">Comments</h3>
-   </header>
-   <div *ngFor="let comment of post.comments"
-    class="flex gap-3 border-bottom-1 border-primary-400 border-round p-3 ml-3 mr-3 bg-secondary">
-    <div class="border-right-1 border-gray-900 pr-3">
-     <p-avatar label="G" styleClass="border-circle bg-primary-200 text-gray-700 font-bold" size="large"
-      shape="circle"></p-avatar>
     </div>
-    <div class="flex justify-content-between w-full">
 
-     <div class="grid">
-      <span class="col-12 flex gap-3 align-items-center">
-       <p class="font-bold text-base">{{ comment.name }} {{ comment.surname }}</p>
-       <p class="text-xs">{{ comment.createdAt | date: 'h:mm a' }}</p>
+    <div class="p-3">
+      <div [innerHtml]="post.html" class="card font-light text-sm font-family-secondary line-height-4	"></div>
+    </div>
+
+    <div class="flex gap-2 border-bottom-1 border-top-1 p-3 border-gray-900">
+      <span *ngFor="let tag of post.tags"
+        class="text-xs border-1 border-gray-500 p-1 pl-3 pr-3 font-family-secondary bg-gray-500"
+        style="border-radius: 0.7rem;">
+        {{tag}}
       </span>
-
-      <p class="col-12 font-light text-sm line-height-3	">{{ comment.description }}</p>
-     </div>
-
-     <p-button appRedirectToLogin class="custom-likes"
-      styleClass="p-button-icon-only bg-transparent pl-3 pr-3 text-xs hover:bg-primary hover:red-900">
-      <i class="pi pi-heart-fill mr-2 text-xs"></i>
-      {{ comment.likes }}
-     </p-button>
     </div>
-   </div>
-  </div>
 
- </div>
+    <div class="flex flex-column gap-5 font-family-secondary text-sm">
+      <header>
+        <h3 class="ml-3 font-normal text-primary-300">Comments</h3>
+      </header>
+      <div *ngFor="let comment of post.comments"
+        class="flex gap-3 border-bottom-1 border-primary-400 border-round p-3 ml-3 mr-3 bg-secondary">
+        <div class="border-right-1 border-gray-900 pr-3">
+          <p-avatar label="G" styleClass="border-circle bg-primary-200 text-gray-700 font-bold" size="large"
+            shape="circle"></p-avatar>
+        </div>
+        <div class="flex justify-content-between w-full">
+
+          <div class="grid">
+            <span class="col-12 flex gap-3 align-items-center">
+              <p class="font-bold text-base">{{ comment.name }} {{ comment.surname }}</p>
+              <p class="text-xs">{{ comment.createdAt | date: 'h:mm a' }}</p>
+            </span>
+
+            <p class="col-12 font-light text-sm line-height-3	">{{ comment.description }}</p>
+          </div>
+
+          <p-button appRedirectToLogin class="custom-likes"
+            styleClass="p-button-icon-only bg-transparent pl-3 pr-3 text-xs hover:bg-primary hover:red-900">
+            <i class="pi pi-heart-fill mr-2 text-xs"></i>
+            {{ comment.likes }}
+          </p-button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
