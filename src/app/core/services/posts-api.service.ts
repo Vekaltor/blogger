@@ -45,7 +45,7 @@ export class PostsApiService {
       })
       .slice(startIndex, endIndex);
 
-    return of(filteredPosts).pipe(delay(0));
+    return of(filteredPosts).pipe(delay(3000));
   }
 
   public getPerLoad() {
@@ -60,19 +60,7 @@ export class PostsApiService {
       perLoad,
       currentAmount
     );
-    return of(posts.slice(startIndex, endIndex)).pipe(
-      delay(0),
-      map((data) => {
-        this.notificationHandler.showSuccess('Pobrano dane pomyślnie !');
-        return data;
-      }),
-      catchError((error: HttpErrorResponse) => {
-        this.notificationHandler.showError(
-          'Wystąpił błąd podczas pobierania danych.'
-        );
-        return throwError(error);
-      })
-    );
+    return of(posts.slice(startIndex, endIndex)).pipe(delay(3000));
   }
 
   private getRangeOfPosts(perLoad: number, currentAmount: number) {
