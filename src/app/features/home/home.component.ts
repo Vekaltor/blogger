@@ -9,31 +9,5 @@ import { LoginPromptService } from 'src/app/core/services/login-prompt.service';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  constructor(
-    public loginPromptService: LoginPromptService,
-    private http: HttpClient,
-    private errorHandler: GlobalErrorHandler
-  ) {}
-
-  public click() {
-    console.log('xd');
-    this.http
-      .get('https://example.com/api/data')
-      .pipe(
-        catchError((error) => {
-          this.errorHandler.handleError(error);
-
-          return throwError((error: HttpErrorResponse) => error);
-        })
-      )
-      .subscribe(
-        (data) => {
-          console.log('Dane:', data);
-        },
-        (error) => {
-          // Obsługa błędu
-          console.error('Błąd:', error);
-        }
-      );
-  }
+  constructor(public loginPromptService: LoginPromptService) {}
 }
