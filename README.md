@@ -20,7 +20,7 @@ for posts, and is designed to be fully responsive.
 
 ## Check on your own
 
-Temporarily unavailable
+https://vekaltor.github.io/blogger/
 
 ![image](https://github.com/Vekaltor/blogger/assets/56607344/933ad00d-a09e-40f5-96f4-c4521ff2e390)
 
